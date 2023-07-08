@@ -8,11 +8,16 @@ describe Desafio do
         end
     end 
 
-=begin
     describe "#remove_duplicates" do
-
+        it "Remove os caracteres repetidos dentro da string." do
+            desafio = Desafio.new
+            expect(desafio.remove_duplicates('Hello, World!')).to eql('Helo, Wrd!')
+        end
+        it "Remove os espaços repetidos dentro da string." do
+            desafio = Desafio.new
+            expect(desafio.remove_duplicates('yo  yo  yo')).to eql('yo ')
+        end
     end
-=end
 
     describe "#longest_palindrome" do
         it "Encontra o palindromo mais longo dentro da string." do
@@ -48,9 +53,15 @@ describe Desafio do
         end
     end
 
-=begin 
     describe "#is_anagram_palindrome?" do
+        it "Checa se é possível formar um palindromo a partir de um anagrama da palavra 'racecar'." do
+            desafio = Desafio.new
+            expect(desafio.is_anagram_palindrome?("racecar")).to eql(true)
+        end
 
+        it "Checa se é possível formar um palindromo a partir de um anagrama embaralhado." do
+            desafio = Desafio.new
+            expect(desafio.is_anagram_palindrome?("enenr")).to eql(true)
+        end
     end
-=end
 end

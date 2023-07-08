@@ -5,7 +5,16 @@ class Desafio
     end
 
     def remove_duplicates(string)
+        new_string = []
+        string.each_char do |letter|
+            if new_string.none?(letter)
+                new_string << letter
+            else
+                next
+            end
+        end
 
+        new_string.join
     end
 
     def longest_palindrome(string)
@@ -39,6 +48,17 @@ class Desafio
     end
 
     def is_anagram_palindrome?(string)
+        char_count = Hash.new(0)
 
+        string.each_char do |char|
+            char_count[char] += 1
+        end
+    
+        odd_count = 0
+        char_count.each_value do |count|
+            odd_count += 1 if count.odd?
+        end
+
+        odd_count <= 1
     end
 end
